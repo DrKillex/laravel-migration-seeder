@@ -7,10 +7,17 @@
          @vite('resources/js/app.js')
     </head>
     <body>
-        <div class="container">
-            <h1>Template Classe 89</h1>
-            <img src="{{ Vite::asset('resources/img/pluto.webp') }}" alt="" srcset="">
-        </div>
-
+        @foreach ($trains as $train)
+            <ul>            
+                    <li>{{ $train['codice'] }}</li>           
+                    <li>{{ $train['azienda'] }}</li>
+                    <li>{{ $train['stazione_partenza'] }}</li>
+                    <li>{{ $train['stazione_arrivo'] }}</li>
+                    <li>{{ $train['orario_partenza'] }}</li>
+                    <li>{{ $train['orario_arrivo'] }}</li>
+                    <li>{{ $train['ritardo'] }}</li> 
+                    <li>{{ $train['cancellato'] }}</li>                             
+            </ul>
+        @endforeach
     </body>
 </html>
